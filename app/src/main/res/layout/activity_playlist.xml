@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:id="@+id/linList"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/player_header_bg"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <ImageButton
+                android:id="@+id/btnBackFolder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_back"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFFFF"
+                android:text="Playlist"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center"
+                android:layout_weight="5"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:background="#000000">
+
+            <ListView
+                android:id="@android:id/list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:divider="#242424"
+                android:dividerHeight="1dp"/>
+        </LinearLayout>
+    </LinearLayout>
+

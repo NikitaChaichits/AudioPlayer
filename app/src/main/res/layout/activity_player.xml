@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin_l"
+    android:orientation="vertical"
+    tools:context=".PlayerActivity">
+
+    <ImageButton
+        android:id="@+id/btnPlaylist"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@null"
+        android:src="@drawable/ic_queue_music"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_song_cover"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_l"
+        android:src="@drawable/song_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCurrentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/margin_l"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_song_cover"
+        />
+
+    <SeekBar
+        android:id="@+id/songSeekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/seekbar_style"
+        android:thumb="@null"
+        app:layout_constraintEnd_toStartOf="@+id/tvSongTime"
+        app:layout_constraintStart_toEndOf="@+id/tvCurrentTime"
+        app:layout_constraintTop_toTopOf="@+id/tvCurrentTime"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCurrentTime"
+         />
+
+    <TextView
+        android:id="@+id/tvSongTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+
+        app:layout_constraintTop_toTopOf="@+id/tvCurrentTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_songTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xl"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/songTitle"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSongTime" />
+
+    <TextView
+        android:id="@+id/tv_songAuthor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/songAuthor"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_songTitle" />
+
+
+    <!-- Player Footer -->
+    <LinearLayout
+        android:id="@+id/ll_playbtn"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/ll_btnspeed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBlock"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_block" />
+
+        <ImageButton
+            android:id="@+id/btnPrevious"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_skip_previous" />
+
+
+        <ImageButton
+            android:id="@+id/btnPlay"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_play_circle" />
+
+
+        <ImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_skip_next" />
+
+        <ImageButton
+            android:id="@+id/btnFavorite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_favorite_border" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_btnspeed"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnRepeat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_replay" />
+
+        <ImageButton
+            android:id="@+id/btnBackward"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_backvard_10" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/btnForward"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_forward_10" />
+
+        <ImageButton
+            android:id="@+id/btnShuffle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_shuffle" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
